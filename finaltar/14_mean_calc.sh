@@ -5,7 +5,7 @@ a=($ID)
 AVG=${#a[@]} #when calculating the mean I need to know the number of items in the group which varies between 3 and 4
 #this AVG bit of code should return the number of files in the group
 
-for id in $ID; do cut -f4,5,6 ${id}_sorted.bam.txt >> {current_dir_name}.txt; done #this will take the gene name, description, and count
+for id in $ID; do cut -f4,5,6 ${id}_sorted.bam.txt >> ${current_dir_name}.txt; done #this will take the gene name, description, and count
 cat ${current_dir_name}.txt | sort -k1 >> ${current_dir_name}.sorted.txt #this will sort the names by the first column
 
 count=0
